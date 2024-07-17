@@ -32,6 +32,11 @@ CELERY_CONFIG = dict(
             default_timeout=int(datetime.timedelta(hours=1).total_seconds()),
         ),
     ),
+    broker_transport_options={
+        "queue_order_strategy": "priority",
+        "priority_steps": list(range(10)),
+        "sep": ":",
+    }
 )
 
 app.config_from_object(CELERY_CONFIG)

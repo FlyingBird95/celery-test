@@ -15,11 +15,11 @@ def one_tenth_second_with_arg(data):
     time.sleep(.1)
 
 
-@app.task(priority=0)
+@app.task(queue="tasks")
 def zero_priority():
     """Zero priority."""
 
 
-@app.task(priority=1)
+@app.task(queue="tasks:9")
 def one_priority():
     """One priority."""
