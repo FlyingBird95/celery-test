@@ -16,7 +16,7 @@ def test_schedule_1000_tasks():
 
 @pytest.mark.repeat(5)
 def test_schedule_1000_tasks_many_data():
-    much_data = {i: i**2 for i in range(500)}
+    much_data = {i: i ** 2 for i in range(500)}
     
     start_time = time.time()
     for _ in range(1000):

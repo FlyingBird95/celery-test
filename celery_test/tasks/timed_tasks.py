@@ -15,7 +15,11 @@ def one_tenth_second_with_arg(data):
     time.sleep(.1)
 
 
-@app.task()
-def one_second():
-    """Sleep for one second."""
-    time.sleep(1)
+@app.task(priority=0)
+def zero_priority():
+    """Zero priority."""
+
+
+@app.task(priority=1)
+def one_priority():
+    """One priority."""
